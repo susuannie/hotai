@@ -871,6 +871,44 @@ h1 {
   }
 }
 
+.vehicle-area .prompt-card {
+  min-height: 92px;
+}
+
+.vehicle-area .prompt-text strong {
+  color: #304a38;
+}
+
+.catalog-note {
+  margin: 13px 0 0;
+  color: #858d83;
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.catalog-note a {
+  color: #496c4e;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: #c4d3be;
+  text-underline-offset: 3px;
+}
+
+.catalog-note a:hover {
+  color: #294b30;
+  text-decoration-color: currentColor;
+}
+
+@media (max-width: 680px) {
+  .vehicle-area .prompt-card {
+    min-height: 70px;
+  }
+
+  .catalog-note {
+    font-size: 9px;
+  }
+}
+
 @media (max-width: 370px) {
   .conversation {
     width: calc(100% - 28px);
