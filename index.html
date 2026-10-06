@@ -5,150 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="電車買幫手，陪你一步一步找到適合自己的電動車。"
+      content="電車選購指南，整理電動車選擇、預算、充電與續航資訊。"
     />
     <meta name="theme-color" content="#f7f8f4" />
-    <title>電車買幫手 — 找到適合你的電動車</title>
+    <title>電車選購指南 — 為日常找到合適的電動車</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="app-shell">
       <aside class="sidebar" aria-label="主選單">
-        <a class="brand" href="#" aria-label="電車買幫手首頁">
+        <a class="brand" href="#" aria-label="電車選購指南首頁">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
-              <path
-                d="M18.2 3.5 8.7 17h6.5l-1.4 11.5L23.3 15h-6.5l1.4-11.5Z"
-                fill="currentColor"
-              />
+              <path d="M7 18.5h18l-1.7-6.2a2 2 0 0 0-1.9-1.4H10.6a2 2 0 0 0-1.9 1.4L7 18.5Zm0 0v3h3m15-3v3h-3M10 21.5h12M10 15h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="22" cy="19.5" r="1.3" fill="currentColor"/>
             </svg>
           </span>
           <span class="brand-copy">
-            <strong>電車買幫手</strong>
-            <span>你的電動車小夥伴</span>
+            <strong>電車選購指南</strong>
+            <span>為日常找到合適的車</span>
           </span>
         </a>
 
-        <button class="new-chat" type="button">
-          <span aria-hidden="true">＋</span>
-          開始新對話
-        </button>
+        <a class="new-chat" href="#ask">
+          <span aria-hidden="true">01</span>
+          開始選購指南
+        </a>
 
-        <div class="side-section">
-          <p class="side-label">探索主題</p>
+        <nav class="side-section" aria-label="選購主題">
+          <p class="side-label">選購主題</p>
           <a class="side-link active" href="#ask">
-            <span class="side-icon" aria-hidden="true">✳</span>
-            買車怎麼開始
+            <span class="side-icon" aria-hidden="true">01</span>
+            選車入門
           </a>
           <a class="side-link" href="#prompts">
-            <span class="side-icon" aria-hidden="true">⌁</span>
-            電車大小事
+            <span class="side-icon" aria-hidden="true">02</span>
+            預算與持有成本
           </a>
           <a class="side-link" href="#prompts">
-            <span class="side-icon" aria-hidden="true">↗</span>
+            <span class="side-icon" aria-hidden="true">03</span>
             充電與續航
           </a>
-          <a class="side-link" href="#prompts">
-            <span class="side-icon" aria-hidden="true">＄</span>
-            預算與補助
+          <a class="side-link" href="#map">
+            <span class="side-icon" aria-hidden="true">04</span>
+            CCS1 充電地圖
           </a>
-        </div>
+        </nav>
 
         <div class="sidebar-bottom">
           <div class="tip-card">
-            <span class="tip-spark" aria-hidden="true">✦</span>
-            <p class="tip-title">第一次看電車？</p>
-            <p class="tip-copy">從你的日常出發，不用先做功課也沒關係。</p>
-            <a href="#ask">看看入門指南 <span aria-hidden="true">→</span></a>
+            <p class="tip-title">選車先看生活需求</p>
+            <p class="tip-copy">通勤距離、停車條件與充電習慣，都會影響適合你的車款。</p>
           </div>
-          <button class="profile" type="button" aria-label="使用者設定">
-            <span class="avatar">你</span>
-            <span class="profile-copy">
-              <strong>電車新手</strong>
-              <span>慢慢找到你的答案</span>
-            </span>
-            <span class="profile-more" aria-hidden="true">···</span>
-          </button>
+          <p class="sidebar-note">電動車選購・實用資訊整理</p>
         </div>
       </aside>
 
       <main class="main-panel">
         <header class="topbar">
-          <button class="mobile-brand" type="button" aria-label="電車買幫手">
+          <a class="mobile-brand" href="#" aria-label="電車選購指南首頁">
             <span class="brand-mark" aria-hidden="true">
               <svg viewBox="0 0 32 32" fill="none">
-                <path
-                  d="M18.2 3.5 8.7 17h6.5l-1.4 11.5L23.3 15h-6.5l1.4-11.5Z"
-                  fill="currentColor"
-                />
+                <path d="M7 18.5h18l-1.7-6.2a2 2 0 0 0-1.9-1.4H10.6a2 2 0 0 0-1.9 1.4L7 18.5Zm0 0v3h3m15-3v3h-3M10 21.5h12M10 15h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="22" cy="19.5" r="1.3" fill="currentColor"/>
               </svg>
             </span>
-            <strong>電車買幫手</strong>
-          </button>
-          <div class="breadcrumb"><span>我的小幫手</span><span aria-hidden="true">/</span><strong>新對話</strong></div>
-          <button class="help-button" type="button">
-            <span class="help-icon" aria-hidden="true">?</span>
-            使用小提醒
-          </button>
+            <strong>電車選購指南</strong>
+          </a>
+          <div class="breadcrumb"><span>電動車選購</span><span aria-hidden="true">/</span><strong>選車入門</strong></div>
+          <a class="header-map-link" href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6" target="_blank" rel="noopener noreferrer">CCS1 充電地圖 <span aria-hidden="true">↗</span></a>
         </header>
 
         <section class="conversation" id="ask" aria-labelledby="welcome-title">
           <div class="welcome">
-            <div class="welcome-mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none">
-                <path
-                  d="M18.2 3.5 8.7 17h6.5l-1.4 11.5L23.3 15h-6.5l1.4-11.5Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <div class="welcome-eyebrow"><span></span> 陪你一起，輕鬆認識電動車</div>
-            <h1 id="welcome-title">嗨，準備好找到<br class="mobile-break" />你的第一台電車了嗎？</h1>
+            <div class="welcome-eyebrow">電動車選購指南 <span>・</span> 從日常需求開始</div>
+            <h1 id="welcome-title">買電動車，先從<br class="mobile-break" />你的生活開始。</h1>
             <p class="welcome-copy">
-              不管你正好奇充電、續航，還是該怎麼挑車，<br class="desktop-break" />
-              都可以從一個小問題開始。沒有笨問題，慢慢聊就好。
+              通勤距離、預算和充電條件，都是選車的重要考量。<br class="desktop-break" />
+              先了解自己的用車習慣，再一步步比較適合的選擇。
             </p>
           </div>
 
           <div class="prompt-area" id="prompts">
             <div class="prompt-heading">
-              <span>不知道從哪裡開始？</span>
-              <span class="prompt-subtitle">試試看這些問題</span>
+              <span>選車時，先想想這幾件事</span>
+              <span class="prompt-subtitle">常見考量</span>
             </div>
             <div class="prompt-grid">
-              <button class="prompt-card" type="button">
+              <article class="prompt-card">
                 <span class="prompt-icon mint" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <span class="prompt-text"><strong>我適合買電動車嗎？</strong><span>先從我的日常用車聊起</span></span>
-                <span class="prompt-arrow" aria-hidden="true">↗</span>
-              </button>
-              <button class="prompt-card" type="button">
+                <span class="prompt-text"><strong>日常通勤與用車習慣</strong><span>每天行駛距離與常用路線</span></span>
+              </article>
+              <article class="prompt-card">
                 <span class="prompt-icon peach" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M6 15.5h12l1.4 2.1v1.9H4.6v-1.9L6 15.5ZM5 15l1.5-5h11l1.5 5M8 10l1-3h6l1 3M7.5 17.7h.01M16.5 17.7h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <span class="prompt-text"><strong>電車大概要準備多少預算？</strong><span>一起盤點買車的花費</span></span>
-                <span class="prompt-arrow" aria-hidden="true">↗</span>
-              </button>
-              <button class="prompt-card" type="button">
+                <span class="prompt-text"><strong>購車預算與持有成本</strong><span>車價、保險與日常花費</span></span>
+              </article>
+              <article class="prompt-card">
                 <span class="prompt-icon sky" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M13.5 2.8 6 13h5l-.5 8.2L18 11h-5l.5-8.2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <span class="prompt-text"><strong>家裡沒有充電樁怎麼辦？</strong><span>聊聊充電方式與生活圈</span></span>
-                <span class="prompt-arrow" aria-hidden="true">↗</span>
-              </button>
-              <button class="prompt-card" type="button">
+                <span class="prompt-text"><strong>充電方式與停車條件</strong><span>家用充電、公共充電選擇</span></span>
+              </article>
+              <article class="prompt-card">
                 <span class="prompt-icon lilac" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 18.5V12M9.5 18.5V6M14.5 18.5v-9M19.5 18.5v-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
                 </span>
-                <span class="prompt-text"><strong>電動車跟油車，養車差多少？</strong><span>看看長期用車成本差異</span></span>
-                <span class="prompt-arrow" aria-hidden="true">↗</span>
-              </button>
+                <span class="prompt-text"><strong>續航與長途行駛</strong><span>行程安排與補電便利性</span></span>
+              </article>
             </div>
           </div>
 
           <a
             class="map-link"
+            id="map"
             href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6"
             target="_blank"
             rel="noopener noreferrer"
@@ -161,25 +132,24 @@
               </svg>
             </span>
             <span class="map-link-copy">
-              <strong>查看 CCS1 充電站地圖</strong>
-              <span>在 Google 地圖上探索充電站</span>
+              <strong>CCS1 充電站地圖</strong>
+              <span>查看台灣 CCS1 充電站位置</span>
             </span>
             <span class="map-link-arrow" aria-hidden="true">↗</span>
           </a>
 
           <div class="composer-wrap">
+            <p class="question-label">還有其他想了解的選車問題？</p>
             <div class="composer" role="group" aria-label="輸入問題">
-              <button class="attach-button" type="button" aria-label="附加內容">＋</button>
-              <label class="visually-hidden" for="question">輸入你想了解的電車問題</label>
-              <input id="question" type="text" placeholder="輸入你想了解的電車問題…" />
-              <span class="composer-hint">Enter ↵</span>
-              <button class="send-button" type="button" aria-label="送出問題">
+              <label class="visually-hidden" for="question">輸入選車問題</label>
+              <input id="question" type="text" placeholder="輸入問題，例如：家裡沒有充電樁適合買電車嗎？" />
+              <span class="search-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 19V5m0 0L6.5 10.5M12 5l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="10.8" cy="10.8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="m15.2 15.2 4.3 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
-              </button>
+              </span>
             </div>
-            <p class="disclaimer">電車買幫手提供一般資訊，實際車款與補助請以官方資料為準。</p>
+            <p class="disclaimer">車款規格、售價與補助資訊，請以品牌及政府官方公告為準。</p>
           </div>
         </section>
       </main>
