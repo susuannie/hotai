@@ -5,56 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="認識 TOYOTA bZ4X 純電 SUV：續航、電池、eTNGA 平台與電能驅動系統重點介紹。"
+      content="用聊天式導覽認識電動車、TOYOTA bZ4X、充電方式與選車考量。"
     />
     <meta name="theme-color" content="#f7f8f4" />
-    <title>TOYOTA bZ4X介紹 — 電車選購指南</title>
+    <title>電車選購助手</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
   </head>
   <body>
     <div class="app-shell">
-      <aside class="sidebar" aria-label="主選單">
-        <a class="brand" href="#" aria-label="電車選購指南首頁">
+      <button class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1"></button>
+      <aside class="sidebar" id="sidebar" aria-label="聊天主選單">
+        <a class="brand" href="#" aria-label="電車選購助手首頁">
           <span class="brand-mark" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none">
               <path d="M7 18.5h18l-1.7-6.2a2 2 0 0 0-1.9-1.4H10.6a2 2 0 0 0-1.9 1.4L7 18.5Zm0 0v3h3m15-3v3h-3M10 21.5h12M10 15h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="22" cy="19.5" r="1.3" fill="currentColor"/>
             </svg>
           </span>
           <span class="brand-copy">
-            <strong>電車選購指南</strong>
-            <span>為日常找到合適的車</span>
+            <strong>電車選購助手</strong>
+            <span>陪你找到適合的電車</span>
           </span>
         </a>
 
-        <a class="new-chat" href="#bz4x">
-          <span aria-hidden="true">01</span>
-          認識 bZ4X
-        </a>
+        <button class="new-chat" id="new-chat" type="button">
+          <span aria-hidden="true">＋</span>
+          開始新對話
+        </button>
 
-        <nav class="side-section" aria-label="選購主題">
-          <p class="side-label">選購主題</p>
-          <a class="side-link active" href="#bz4x">
-            <span class="side-icon" aria-hidden="true">01</span>
-            bZ4X介紹
-          </a>
-          <a class="side-link" href="#diagnosis">
-            <span class="side-icon" aria-hidden="true">02</span>
-            智能診斷
-          </a>
-          <a class="side-link" href="#prompts">
-            <span class="side-icon" aria-hidden="true">03</span>
+        <nav class="side-section" aria-label="常見選購主題">
+          <p class="side-label">快速選單</p>
+          <button class="side-link" type="button" data-message="想了解 TOYOTA bZ4X">
+            <span class="side-icon" aria-hidden="true">◇</span>
+            認識 bZ4X
+          </button>
+          <button class="side-link" type="button" data-message="我想了解電動車充電與續航">
+            <span class="side-icon" aria-hidden="true">ϟ</span>
             充電與續航
-          </a>
-          <a class="side-link" href="#map">
-            <span class="side-icon" aria-hidden="true">04</span>
+          </button>
+          <button class="side-link" type="button" data-message="我想開始選車診斷">
+            <span class="side-icon" aria-hidden="true">☷</span>
+            開始選車診斷
+          </button>
+          <a
+            class="side-link"
+            href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="side-icon" aria-hidden="true">⌖</span>
             CCS1 充電地圖
+            <span class="external-icon" aria-hidden="true">↗</span>
           </a>
         </nav>
 
         <div class="sidebar-bottom">
           <div class="tip-card">
-            <p class="tip-title">選車先看生活需求</p>
-            <p class="tip-copy">通勤距離、停車條件與充電習慣，都會影響適合你的車款。</p>
+            <span class="tip-spark" aria-hidden="true">✳</span>
+            <p class="tip-title">從你的生活開始</p>
+            <p class="tip-copy">通勤距離、停車條件與充電習慣，都是選車的重要線索。</p>
           </div>
           <p class="sidebar-note">電動車選購・實用資訊整理</p>
         </div>
@@ -62,182 +71,79 @@
 
       <main class="main-panel">
         <header class="topbar">
-          <a class="mobile-brand" href="#" aria-label="電車選購指南首頁">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 32 32" fill="none">
-                <path d="M7 18.5h18l-1.7-6.2a2 2 0 0 0-1.9-1.4H10.6a2 2 0 0 0-1.9 1.4L7 18.5Zm0 0v3h3m15-3v3h-3M10 21.5h12M10 15h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="22" cy="19.5" r="1.3" fill="currentColor"/>
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="開啟主選單"
+            aria-controls="sidebar"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <div class="chat-title">
+            <span class="assistant-avatar small-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </span>
-            <strong>電車選購指南</strong>
-          </a>
-          <div class="breadcrumb"><span>TOYOTA bZ4X</span><span aria-hidden="true">/</span><strong>bZ4X介紹</strong></div>
-          <a class="header-map-link" href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6" target="_blank" rel="noopener noreferrer">CCS1 充電地圖 <span aria-hidden="true">↗</span></a>
-        </header>
-
-        <section class="conversation" id="ask" aria-labelledby="welcome-title">
-          <div class="welcome" id="bz4x">
-            <div class="welcome-eyebrow">TOYOTA bZ4X <span>・</span> 純電 SUV</div>
-            <h1 id="welcome-title">自信純電，凌駕<br class="mobile-break" />未來</h1>
-            <p class="welcome-copy">
-              bZ4X 以純電專屬平台、電能驅動系統與高效能電池，<br class="desktop-break" />
-              為日常通勤與長途行程，帶來自在的純電駕馭體驗。
-            </p>
+            <span>
+              <strong>電車選購助手</strong>
+              <span class="status"><i aria-hidden="true"></i> 資訊導覽中</span>
+            </span>
           </div>
-
-          <div class="prompt-area vehicle-area" id="prompts">
-            <div class="prompt-heading">
-              <span>TOYOTA bZ4X 產品亮點</span>
-              <span class="prompt-subtitle">型錄重點整理</span>
-            </div>
-            <div class="prompt-grid">
-              <article class="prompt-card">
-                <span class="prompt-icon mint" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span class="prompt-text"><strong>外觀</strong><span>車身線條、燈組與輪圈設計</span></span>
-              </article>
-              <article class="prompt-card">
-                <span class="prompt-icon peach" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M6 15.5h12l1.4 2.1v1.9H4.6v-1.9L6 15.5ZM5 15l1.5-5h11l1.5 5M8 10l1-3h6l1 3M7.5 17.7h.01M16.5 17.7h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span class="prompt-text"><strong>內裝配備</strong><span>座艙設計、乘坐空間與便利配備</span></span>
-              </article>
-              <article class="prompt-card">
-                <span class="prompt-icon sky" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M13.5 2.8 6 13h5l-.5 8.2L18 11h-5l.5-8.2Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
-                <span class="prompt-text"><strong>安全</strong><span>主動安全與乘員防護配備</span></span>
-              </article>
-              <article class="prompt-card">
-                <span class="prompt-icon lilac" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 18.5V12M9.5 18.5V6M14.5 18.5v-9M19.5 18.5v-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M3 19h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </span>
-                <span class="prompt-text"><strong>充電配套</strong><span>充電方式、規格與相關服務資訊</span></span>
-              </article>
-            </div>
-            <p class="catalog-note">
-              各項配備可能因車型等級而異，詳細資訊請以官方型錄及實際車款為準。資料來源：
-              <a href="https://hotaicdn.azureedge.net/toyotaweb/CAR_2026061516341694702228.pdf" target="_blank" rel="noopener noreferrer">TOYOTA bZ4X 官方型錄 ↗</a>
-            </p>
-          </div>
-
-          <section class="diagnosis-section" id="diagnosis" aria-labelledby="diagnosis-title">
-            <div class="diagnosis-heading">
-              <div>
-                <p class="diagnosis-eyebrow">PERSONALIZED EV GUIDE</p>
-                <h2 id="diagnosis-title">智能診斷</h2>
-                <p>填寫你的用車與預算概況，了解哪些條件最適合你的電車生活。</p>
-              </div>
-              <span class="diagnosis-step">02 <span>/ 04</span></span>
-            </div>
-
-            <div class="diagnosis-fields" role="group" aria-label="智能診斷資料">
-              <label class="diagnosis-field">
-                <span>目前持有車款</span>
-                <input type="text" name="current-car" placeholder="例如：TOYOTA Corolla Altis" />
-              </label>
-              <label class="diagnosis-field">
-                <span>目前車齡</span>
-                <select name="car-age">
-                  <option value="" selected disabled>請選擇車齡</option>
-                  <option>尚未持有汽車</option>
-                  <option>3 年以下</option>
-                  <option>3–5 年</option>
-                  <option>6–10 年</option>
-                  <option>10 年以上</option>
-                </select>
-              </label>
-              <label class="diagnosis-field">
-                <span>居住城市</span>
-                <select name="city">
-                  <option value="" selected disabled>請選擇居住城市</option>
-                  <option>台北市</option>
-                  <option>新北市</option>
-                  <option>桃園市</option>
-                  <option>新竹縣／市</option>
-                  <option>台中市</option>
-                  <option>彰化縣</option>
-                  <option>嘉義縣／市</option>
-                  <option>台南市</option>
-                  <option>高雄市</option>
-                  <option>宜蘭／花蓮／台東</option>
-                  <option>其他</option>
-                </select>
-              </label>
-              <label class="diagnosis-field">
-                <span>購車預算</span>
-                <select name="budget">
-                  <option value="" selected disabled>請選擇預算範圍</option>
-                  <option>新台幣 100 萬以下</option>
-                  <option>新台幣 100–150 萬</option>
-                  <option>新台幣 150–200 萬</option>
-                  <option>新台幣 200–250 萬</option>
-                  <option>新台幣 250 萬以上</option>
-                  <option>還在評估中</option>
-                </select>
-              </label>
-              <label class="diagnosis-field">
-                <span>每年約行駛里程</span>
-                <select name="annual-distance">
-                  <option value="" selected disabled>請選擇年行駛里程</option>
-                  <option>5,000 公里以下</option>
-                  <option>5,000–10,000 公里</option>
-                  <option>10,000–20,000 公里</option>
-                  <option>20,000 公里以上</option>
-                </select>
-              </label>
-              <label class="diagnosis-field">
-                <span>停車與充電條件</span>
-                <select name="charging">
-                  <option value="" selected disabled>請選擇目前條件</option>
-                  <option>有固定車位，可評估安裝充電設備</option>
-                  <option>有固定車位，但無法安裝充電設備</option>
-                  <option>沒有固定車位，主要使用公共充電</option>
-                  <option>尚不確定</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="diagnosis-footer">
-              <p>目前為介面預覽，填寫內容不會送出或保存。</p>
-              <button class="diagnosis-button" type="button">開始智能診斷 <span aria-hidden="true">→</span></button>
-            </div>
-          </section>
-
           <a
-            class="map-link"
-            id="map"
+            class="header-map-link"
             href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="在新分頁開啟 CCS1 充電站地圖"
-          >
-            <span class="map-pin" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M19 10.2c0 5-7 10.3-7 10.3S5 15.2 5 10.2a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-                <circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.7"/>
-              </svg>
-            </span>
-            <span class="map-link-copy">
-              <strong>CCS1 充電站地圖</strong>
-              <span>查看台灣 CCS1 充電站位置</span>
-            </span>
-            <span class="map-link-arrow" aria-hidden="true">↗</span>
-          </a>
+          >充電地圖 <span aria-hidden="true">↗</span></a>
+        </header>
 
-          <div class="composer-wrap">
-            <p class="question-label">還有其他想了解的選車問題？</p>
-            <div class="composer" role="group" aria-label="輸入問題">
-              <label class="visually-hidden" for="question">輸入選車問題</label>
-              <input id="question" type="text" placeholder="輸入問題，例如：家裡沒有充電樁適合買電車嗎？" />
-              <span class="search-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <circle cx="10.8" cy="10.8" r="6" stroke="currentColor" stroke-width="1.8"/><path d="m15.2 15.2 4.3 4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <section class="chat-panel" aria-label="電車選購對話">
+          <div class="chat-feed" id="chat-feed" role="log" aria-live="polite" aria-relevant="additions">
+            <div class="day-divider"><span>今天</span></div>
+            <article class="message assistant-message">
+              <span class="assistant-avatar message-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </span>
-            </div>
-            <p class="disclaimer">車款規格、售價與補助資訊，請以品牌及政府官方公告為準。</p>
+              <div class="message-content">
+                <span class="speaker-name">電車選購助手</span>
+                <div class="bubble">
+                  <p>嗨！我可以陪你了解電動車與 TOYOTA bZ4X，也能一起整理適合你的選車條件。你現在最想先知道什麼？</p>
+                  <div class="suggestion-list" aria-label="建議問題">
+                    <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
+                    <button class="suggestion" type="button" data-message="我想了解電動車充電與續航">充電與續航</button>
+                    <button class="suggestion" type="button" data-message="我想開始選車診斷">幫我挑選適合的電車</button>
+                    <button class="suggestion" type="button" data-message="我想查看 CCS1 充電站地圖">找附近充電站</button>
+                  </div>
+                </div>
+                <time class="message-time">現在</time>
+              </div>
+            </article>
           </div>
+
+          <form class="composer-wrap" id="chat-form">
+            <label class="visually-hidden" for="question">輸入你的選車問題</label>
+            <div class="composer">
+              <input
+                id="question"
+                name="question"
+                type="text"
+                autocomplete="off"
+                placeholder="輸入問題，例如：沒有家用充電樁適合買電動車嗎？"
+                required
+              />
+              <button class="send-button" type="submit" aria-label="送出訊息">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 19V5m0 0L6.5 10.5M12 5l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="disclaimer">此頁為靜態資訊導覽原型，回答由預設內容提供，尚未串接 AI。車款規格、售價與補助請以官方公告為準。</p>
+          </form>
         </section>
       </main>
     </div>
