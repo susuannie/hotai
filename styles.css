@@ -1228,33 +1228,33 @@ select:focus-visible {
 
 :root {
   color-scheme: light;
-  color: #334451;
-  background: #f2f5f7;
+  color: #493d33;
+  background: #f4efe8;
 
-  --green: #5b788d;
-  --green-dark: #e7edf1;
-  --ink: #334451;
-  --muted: #7e8e99;
-  --line: #dce4e9;
+  --green: #87684f;
+  --green-dark: #e9dfd3;
+  --ink: #493d33;
+  --muted: #897b6e;
+  --line: #e3d8cb;
 }
 
 body {
-  background: #f2f5f7;
+  background: #f4efe8;
 }
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline-color: rgba(87, 139, 169, 0.68);
+  outline-color: rgba(157, 119, 83, 0.65);
 }
 
 .app-shell {
   position: relative;
   isolation: isolate;
   background:
-    radial-gradient(ellipse at 76% 0%, rgba(201, 218, 229, 0.36), transparent 36%),
-    #f2f5f7;
+    radial-gradient(ellipse at 76% 0%, rgba(225, 209, 188, 0.42), transparent 36%),
+    #f4efe8;
 }
 
 .app-shell::before {
@@ -1273,120 +1273,120 @@ select:focus-visible {
 }
 
 .sidebar {
-  border-right: 1px solid #d9e2e8;
-  background: linear-gradient(180deg, #e8eef2, #e2e9ee);
-  box-shadow: 8px 0 28px rgba(48, 74, 91, 0.06);
-  color: #334956;
+  border-right: 1px solid #dfd2c3;
+  background: linear-gradient(180deg, #eee5da, #e8ddd0);
+  box-shadow: 8px 0 28px rgba(83, 62, 43, 0.06);
+  color: #55473b;
 }
 
 .brand-mark {
-  border: 1px solid #c9d8e1;
+  border: 1px solid #d9c8b4;
   border-radius: 12px;
-  color: #52788e;
-  background: linear-gradient(145deg, #f8fbfc, #dce8ee);
+  color: #8a694d;
+  background: linear-gradient(145deg, #fffdf9, #eadbc9);
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.8);
 }
 
 .brand-copy strong {
-  color: #2c414e;
+  color: #493a2e;
   letter-spacing: 0.02em;
 }
 
 .brand-copy span,
 .side-label,
 .sidebar-note {
-  color: #738691;
+  color: #837465;
 }
 
 .new-chat {
-  border-color: #c7d5dd;
+  border-color: #d7c8b8;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.58);
-  color: #385366;
+  background: rgba(255, 253, 249, 0.7);
+  color: #654d39;
 }
 
 .new-chat:hover {
-  border-color: #9fb9c8;
-  background: #f7fafb;
+  border-color: #bda389;
+  background: #fffaf3;
 }
 
 .side-link {
   border: 1px solid transparent;
   border-radius: 9px;
-  color: #536976;
+  color: #665646;
 }
 
 .side-link:hover {
-  border-color: #d2e0e7;
-  background: rgba(255, 255, 255, 0.72);
-  color: #2f5368;
+  border-color: #d7c5b0;
+  background: rgba(255, 250, 243, 0.78);
+  color: #63472f;
 }
 
 .side-icon {
-  color: #668ba0;
+  color: #9a7656;
 }
 
 .external-icon {
-  color: #8195a1;
+  color: #927b64;
 }
 
 .topbar {
-  border-bottom-color: rgba(207, 219, 226, 0.8);
-  background: rgba(249, 251, 252, 0.82);
+  border-bottom-color: rgba(218, 205, 190, 0.82);
+  background: rgba(250, 247, 242, 0.96);
   backdrop-filter: blur(12px);
 }
 
 .chat-title strong {
-  color: #354a57;
+  color: #514337;
 }
 
 .status {
-  color: #7a8d98;
+  color: #887969;
 }
 
 .status i {
-  background: #76a991;
-  box-shadow: 0 0 0 3px rgba(118, 169, 145, 0.13);
+  background: #87a17d;
+  box-shadow: 0 0 0 3px rgba(135, 161, 125, 0.13);
 }
 
 .assistant-avatar {
-  border-color: #d1e0e7;
-  color: #5d8499;
-  background: linear-gradient(145deg, #f8fbfc, #e2edf2);
+  border-color: #dfd0be;
+  color: #947352;
+  background: linear-gradient(145deg, #fffdf9, #eee2d3);
   box-shadow: none;
 }
 
 .small-avatar,
 .message-avatar {
-  border: 1px solid #d1e0e7;
+  border: 1px solid #dfd0be;
 }
 
 .header-map-link {
   border: 0;
-  color: #607986;
+  color: #796550;
 }
 
 .header-map-link:hover,
 .menu-toggle:hover {
-  background: #e7eef2;
+  background: #eee4d9;
 }
 
 .menu-toggle span {
-  background: #5d707b;
+  background: #715e4c;
 }
 
 .chat-feed {
-  scrollbar-color: #c5d2da transparent;
+  scrollbar-color: #cdbba7 transparent;
 }
 
 .home-slogan {
   position: relative;
   overflow: hidden;
   padding: 22px 22px 18px;
-  border: 1px solid #cfdee6;
+  border: 1px solid #dfd0bd;
   border-radius: 18px;
-  background: linear-gradient(145deg, #e5edf2, #f0f4f6 70%, #e8eef2);
-  color: #344d5b;
+  background: linear-gradient(145deg, #f1e7da, #fbf7f0 70%, #eee3d6);
+  color: #514235;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
@@ -1395,166 +1395,166 @@ select:focus-visible {
 }
 
 .slogan-title {
-  color: #345466;
+  color: #59442f;
   font-size: clamp(17px, 2vw, 26px);
   letter-spacing: 0;
 }
 
 .slogan-star {
-  color: #7898aa;
+  color: #a7835d;
   text-shadow: none;
 }
 
 .slogan-copy {
-  color: #5d727e;
+  color: #715f4d;
 }
 
 .day-divider {
-  color: #8b9aa3;
+  color: #8a7968;
   letter-spacing: 0;
 }
 
 .day-divider::before,
 .day-divider::after {
-  background: #e1e7eb;
+  background: #e4d9cd;
 }
 
 .speaker-name {
-  color: #788b96;
+  color: #756353;
 }
 
 .bubble {
-  border-color: #e0e7eb;
+  border-color: #e6ddd2;
   border-radius: 3px 16px 16px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 3px 12px rgba(47, 70, 83, 0.035);
-  color: #4b5c66;
+  background: #fffdf9;
+  box-shadow: 0 3px 12px rgba(83, 62, 43, 0.045);
+  color: #51463c;
 }
 
 .message-time {
-  color: #98a4ab;
+  color: #857666;
 }
 
 .user-message .bubble {
-  border-color: #d4e1e8;
+  border-color: #ddc9b2;
   border-radius: 16px 3px 16px 16px;
-  background: #e3edf2;
-  color: #3f5968;
+  background: #efe1d0;
+  color: #5d4632;
 }
 
 .suggestion {
-  border-color: #d5e0e5;
+  border-color: #e0d3c4;
   border-radius: 18px;
-  background: #f8fafb;
-  color: #557588;
+  background: #fffaf4;
+  color: #806142;
 }
 
 .suggestion:hover,
 .suggestion-link:hover {
-  border-color: #aec5d1;
-  background: #eaf1f4;
+  border-color: #cdb397;
+  background: #f3e8da;
 }
 
 .redo-diagnostic-btn {
-  border-color: #c8d8df;
-  background: #eaf0f3;
-  color: #4f6e7e;
+  border-color: #d8c4ad;
+  background: #f1e5d7;
+  color: #765638;
 }
 
 .field,
 .field span {
-  color: #52636c;
+  color: #665748;
 }
 
 .field select {
-  border-color: #d5e0e5;
+  border-color: #e0d4c7;
   border-radius: 10px;
-  background: #fbfcfd;
-  color: #40535e;
+  background: #fffdf9;
+  color: #514438;
 }
 
 .field select option {
   background: #fff;
-  color: #40535e;
+  color: #514438;
 }
 
 .diagnostic-submit,
 .send-button {
   border: 0;
   border-radius: 999px;
-  background: #5b788d;
+  background: #98724f;
   color: #fff;
   box-shadow: none;
 }
 
 .diagnostic-submit:hover,
 .send-button:hover {
-  background: #49687e;
+  background: #7e5d40;
 }
 
 .diagnostic-result {
-  border-color: #d5e2e8;
+  border-color: #e0d0bd;
   border-radius: 12px;
-  background: linear-gradient(180deg, #f7fafb, #edf3f6);
+  background: linear-gradient(180deg, #fcf8f1, #f2e8dc);
 }
 
 .status-pill {
   border: 0;
   border-radius: 999px;
-  background: #dce9ee;
-  color: #456779;
+  background: #e8d8c5;
+  color: #6f5135;
 }
 
 .diagnostic-result p,
 .diagnostic-result ul {
-  color: #4c606b;
+  color: #5c4d40;
 }
 
 .recommendation-block {
-  border-top-color: rgba(103, 135, 151, 0.18);
+  border-top-color: rgba(137, 106, 76, 0.2);
 }
 
 .recommendation-block strong,
 .answer-link {
-  color: #527b90;
+  color: #8b6846;
 }
 
 .composer-wrap {
-  background: linear-gradient(180deg, rgba(242, 245, 247, 0.82), #f2f5f7 25%);
+  background: linear-gradient(180deg, rgba(244, 239, 232, 0.82), #f4efe8 25%);
 }
 
 .composer {
-  border-color: #d6e0e5;
+  border-color: #e0d4c8;
   border-radius: 16px;
-  background: #fff;
-  box-shadow: 0 6px 22px rgba(48, 73, 88, 0.07);
+  background: #fffdf9;
+  box-shadow: 0 6px 22px rgba(83, 62, 43, 0.07);
 }
 
 .composer:focus-within {
-  border-color: #a9c2cf;
-  box-shadow: 0 6px 22px rgba(48, 73, 88, 0.08), 0 0 0 3px rgba(105, 151, 174,  0.12);
+  border-color: #c7aa8c;
+  box-shadow: 0 6px 22px rgba(83, 62, 43, 0.08), 0 0 0 3px rgba(157, 119, 83, 0.12);
 }
 
 .composer input {
-  color: #40545f;
+  color: #514438;
 }
 
 .composer input::placeholder {
-  color: #9aa8b0;
+  color: #998b7d;
 }
 
 .disclaimer {
-  color: #8c9aa2;
+  color: #7e7062;
 }
 
 .sidebar-backdrop.is-visible {
-  background: rgba(41, 59, 70, 0.28);
+  background: rgba(65, 48, 34, 0.28);
   backdrop-filter: none;
 }
 
 @media (max-width: 760px) {
   .topbar {
-    background: rgba(249, 251, 252, 0.94);
+    background: rgba(250, 247, 242, 0.96);
   }
 
   .chat-feed {
