@@ -382,6 +382,7 @@ input:focus-visible {
 .home-tagline {
   display: inline-flex;
   align-self: flex-start;
+  margin-top: 12px;
   padding: 7px 14px;
   border: 1px solid rgba(83, 117, 86, 0.2);
   border-radius: 999px;
