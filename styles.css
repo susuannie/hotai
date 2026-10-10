@@ -1250,10 +1250,26 @@ select:focus-visible {
 }
 
 .app-shell {
+  position: relative;
+  isolation: isolate;
   background:
-    linear-gradient(rgba(242, 245, 247, 0.93), rgba(242, 245, 247, 0.95)),
-    url("./assets/bz4x-winter-background.png") center 44% / cover fixed,
+    radial-gradient(ellipse at 76% 0%, rgba(201, 218, 229, 0.36), transparent 36%),
     #f2f5f7;
+}
+
+.app-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: url("./assets/bz4x-winter-background.png") center 44% / cover no-repeat;
+  content: "";
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.main-panel {
+  position: relative;
+  z-index: 1;
 }
 
 .sidebar {
