@@ -342,6 +342,57 @@ input:focus-visible {
   scrollbar-width: thin;
 }
 
+.home-slogan {
+  padding: 22px 22px 18px;
+  border: 1px solid rgba(121, 154, 122, 0.36);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(205, 224, 196, 0.36), rgba(219, 234, 212, 0.25));
+  color: #294536;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.slogan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.slogan-title {
+  color: #2d4f3d;
+  font-size: clamp(17px, 2vw, 26px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.slogan-star {
+  color: #355f4b;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.slogan-copy {
+  margin: 0;
+  color: #3a4f43;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.home-tagline {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 7px 14px;
+  border: 1px solid rgba(83, 117, 86, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.54);
+  color: #385b48;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
 .day-divider {
   display: flex;
   align-items: center;
