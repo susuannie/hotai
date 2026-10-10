@@ -21,7 +21,7 @@ const answerTopics = [
       "如果你還在猶豫，最實際的做法是先確認：住家、上班地點、常跑路線與休閒地點，哪裡有可用充電資源，從這些條件來決定要不要安裝家用充電樁。",
     ],
     links: [{ label: "查看 CCS1 充電站地圖", href: mapUrl }],
-    suggestions: ["我想了解電動車充電與續航", "價格和維修費怎麼比較？", "想了解 bZ4X"],
+    suggestions: ["家裡沒充電器怎麼辦", "價格和維修費怎麼比較？", "我想知道充電站在哪裡"],
   },
   {
     matches: ["地圖", "充電站", "附近", "找站", "充電地圖", "站點"],
@@ -51,7 +51,7 @@ const answerTopics = [
     suggestions: ["想了解 bZ4X", "價格和維修費怎麼比較？", "幫我整理選車條件"],
   },
   {
-    matches: ["預算", "售價", "價格", "補助", "費用", "成本", "維修", "省錢", "總成本", "比油車", "油車"],
+    matches: ["預算", "售價", "價格", "補助", "費用", "成本", "維修", "省錢", "總成本", "比油車", "油車", "值得換", "換不換", "值得不值得", "電車值得"],
     paragraphs: [
       "很多人會把電動車的車價拿去和油車比較，但真正比較值得看的，是『5 到 10 年的總持有成本』。除了車價，還要計入保險、稅費、充電或加油、維修與車輛折舊。",
       "電動車的維修頻率通常低於油車，因為沒有引擎、變速箱與排氣系統等高維護部件。若是長期持有，電動車的維修次數與維護成本往往有明顯優勢。",
@@ -209,10 +209,12 @@ function resetConversation() {
       <span class="speaker-name">TOYOTA電車小幫手</span>
       <div class="bubble">
         <p>嗨！我可以陪你了解電動車與 TOYOTA bZ4X，也能一起整理適合你的選車條件。你現在最想先知道什麼？</p>
-        <div class="suggestion-list" aria-label="建議問題">
-          <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
+        <div class="suggestion-list" aria-label="常見痛點問題">
+          <button class="suggestion" type="button" data-message="家裡沒充電器怎麼辦">家裡沒充電器怎麼辦</button>
+          <button class="suggestion" type="button" data-message="價格和維修費怎麼比較？">價格和維修費怎麼比較？</button>
+          <button class="suggestion" type="button" data-message="電車值得換嗎？">電車值得換嗎？</button>
           <button class="suggestion" type="button" data-message="我想了解電動車充電與續航">充電與續航</button>
-          <button class="suggestion" type="button" data-message="我想開始選車診斷">幫我挑選適合的電車</button>
+          <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
           <button class="suggestion" type="button" data-message="我想查看 CCS1 充電站地圖">找附近充電站</button>
         </div>
       </div>
