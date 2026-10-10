@@ -181,6 +181,15 @@ function addMessage(text, role, answer) {
 
 function findAnswer(message) {
   const normalizedMessage = message.toLowerCase();
+
+  if (
+    ["診斷", "選車診斷", "適合我", "幫我診斷", "幫我選車", "適合買電動車"].some((keyword) =>
+      normalizedMessage.includes(keyword.toLowerCase()),
+    )
+  ) {
+    return { paragraphs: ["讓我先幫你做一個簡單的選車診斷，填入你的日常使用情境後，我會把適合的選擇整理給你。"], suggestions: [] };
+  }
+
   return (
     answerTopics.find((topic) =>
       topic.matches.some((keyword) => normalizedMessage.includes(keyword.toLowerCase())),
@@ -188,12 +197,221 @@ function findAnswer(message) {
   );
 }
 
+function buildDiagnosticForm() {
+  const article = document.createElement("article");
+  article.className = "message assistant-message diagnostic-message";
+  article.innerHTML = `
+    <span class="assistant-avatar message-avatar" aria-hidden="true">${assistantIcon}</span>
+    <div class="message-content">
+      <span class="speaker-name">TOYOTA電車小幫手</span>
+      <div class="bubble">
+        <p>先幫你做一個快速選車診斷。你只要填入這些條件，我會判斷你比較適合哪種使用方式。</p>
+        <form class="diagnostic-card" id="diagnostic-form">
+          <div class="form-grid">
+            <label class="field">
+              <span>預算</span>
+              <select name="budget" required>
+                <option value="">請選擇</option>
+                <option value="60-90">60～90 萬</option>
+                <option value="90-120">90～120 萬</option>
+                <option value="120-160">120～160 萬</option>
+                <option value="160+">160 萬以上</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>居住城市</span>
+              <select name="city" required>
+                <option value="">請選擇</option>
+                <option value="north">北部</option>
+                <option value="central">中部</option>
+                <option value="south">南部</option>
+                <option value="east">東部/離島</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>是否有充電裝置</span>
+              <select name="charger" required>
+                <option value="">請選擇</option>
+                <option value="home">有家用充電樁</option>
+                <option value="parking">有停車位可裝充電樁</option>
+                <option value="public">只有公共充電站可用</option>
+                <option value="none">沒有充電裝置</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>每日通勤距離</span>
+              <select name="commute" required>
+                <option value="">請選擇</option>
+                <option value="30">30 公里內</option>
+                <option value="30-60">30～60 公里</option>
+                <option value="60-100">60～100 公里</option>
+                <option value="100+">100 公里以上</option>
+              </select>
+            </label>
+
+            <label class="field field-full">
+              <span>主要用途</span>
+              <select name="usage" required>
+                <option value="">請選擇</option>
+                <option value="commute">上班通勤</option>
+                <option value="family">家庭代步</option>
+                <option value="travel">週末出遊</option>
+                <option value="mixed">通勤＋長途</option>
+              </select>
+            </label>
+          </div>
+
+          <button class="diagnostic-submit" type="submit">開始診斷</button>
+        </form>
+      </div>
+    </div>
+  `;
+
+  const form = article.querySelector("#diagnostic-form");
+  form.addEventListener("submit", handleDiagnosticSubmit);
+  return article;
+}
+
+function renderDiagnosticResult(values) {
+  const budgetLevel = values.budget;
+  const chargerState = values.charger;
+  const commuteLevel = values.commute;
+
+  const score = {
+    "60-90": 1,
+    "90-120": 2,
+    "120-160": 3,
+    "160+": 4,
+    home: 2,
+    parking: 1,
+    public: 1,
+    none: 0,
+    "30": 2,
+    "30-60": 2,
+    "60-100": 1,
+    "100+": 0,
+  };
+
+  const totalScore =
+    score[budgetLevel] +
+    score[chargerState] +
+    score[commuteLevel];
+
+  let kind = "適合先評估再決定";
+  let recommendation = "你比較適合先確認充電與使用範圍，能把不確定因素降到最低。";
+  let followUp = [
+    "先比較是否有穩定的充電點",
+    "再看每月通勤與車程需求",
+    "確認長期維修與能源成本的優勢",
+  ];
+
+  if (totalScore >= 7) {
+    kind = "非常適合換電車";
+    recommendation = "你的使用情境偏適合純電車，尤其在通勤與日常代步場景下，車價與維修成本的綜合優勢會比較明顯。";
+    followUp = [
+      "選擇家用或公司充電方案最省心",
+      "可優先考慮入門純電 SUV 如 bZ4X",
+      "以通勤與日常出行作為主要比較基準",
+    ];
+  } else if (totalScore >= 4) {
+    kind = "可以考慮電動車";
+    recommendation = "你有明顯的換車潛力，但仍建議把充電安排與長程需求一起列入評估。";
+    followUp = [
+      "確認有無固定停車位充電樁",
+      "比較每月充電成本與油耗成本",
+      "將週末長途需求納入車款選擇",
+    ];
+  } else if (totalScore >= 2) {
+    kind = "需要更完整充電方案";
+    recommendation = "如果你沒有穩定充電點，建議先補足充電環境再選車，否則日常使用體驗可能會受到影響。";
+    followUp = [
+      "先評估社區充電或公司充電可用性",
+      "確認是否能安裝家用充電樁",
+      "長途需求可考慮保留油車作為備用",
+    ];
+  }
+
+  if (chargerState === "none" && commuteLevel === "100+") {
+    kind = "建議暫緩換電車";
+    recommendation = "在沒有固定充電裝置、且長距離通勤較高的情況下，電動車的便利性可能會受影響。先補齊充電條件或再觀察半年再決定更稳妥。";
+    followUp = [
+      "確認可否安裝家用充電樁",
+      "比較可用公共充電站是否足夠",
+      "先保留油車作為長途使用補強",
+    ];
+  }
+
+  const result = document.createElement("div");
+  result.className = "diagnostic-result";
+  result.innerHTML = `
+    <div class="status-pill">${kind}</div>
+    <p>${recommendation}</p>
+    <ul>
+      ${followUp.map((item) => `<li>${item}</li>`).join("")}
+    </ul>
+    <div class="recommendation-block">
+      <strong>建議重點</strong>
+      <p>以你現在的條件來看，${chargerState === "none" ? "優先確認充電方式與停車環境" : "充電條件已經具備相當優勢"}，再依 ${budgetLevel === "60-90" ? "入門預算" : budgetLevel === "90-120" ? "中階預算" : budgetLevel === "120-160" ? "中高預算" : "較高預算"} 來看，TOYOTA bZ4X 會是一個值得初步比較的純電 SUV 選項。</p>
+    </div>
+  `;
+
+  const form = document.querySelector("#diagnostic-form");
+  if (form) {
+    form.replaceWith(result);
+  }
+
+  return result;
+}
+
+function handleDiagnosticSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const destination = form.parentElement?.closest(".bubble") || form.parentElement;
+  const formData = new FormData(form);
+  const values = Object.fromEntries(formData.entries());
+
+  renderDiagnosticResult(values);
+
+  const followUpButtons = document.createElement("div");
+  followUpButtons.className = "suggestion-list";
+  followUpButtons.innerHTML = `
+    <button class="suggestion" type="button" data-message="家裡沒充電器怎麼辦">家裡沒充電器怎麼辦</button>
+    <button class="suggestion" type="button" data-message="價格和維修費怎麼比較？">價格和維修費怎麼比較？</button>
+    <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
+  `;
+
+  if (destination) {
+    destination.append(followUpButtons);
+  }
+}
+
+function showDiagnosticForm() {
+  const existing = chatFeed.querySelector(".diagnostic-message");
+  if (existing) {
+    existing.remove();
+  }
+
+  chatFeed.append(buildDiagnosticForm());
+  chatFeed.scrollTop = chatFeed.scrollHeight;
+}
+
 function sendMessage(message) {
   const trimmedMessage = message.trim();
   if (!trimmedMessage) return;
 
   addMessage(trimmedMessage, "user");
-  addMessage("", "assistant", findAnswer(trimmedMessage));
+
+  if (["診斷", "選車診斷", "適合我", "幫我診斷", "幫我選車", "適合買電動車"].some((keyword) =>
+    trimmedMessage.toLowerCase().includes(keyword.toLowerCase()),
+  )) {
+    showDiagnosticForm();
+  } else {
+    addMessage("", "assistant", findAnswer(trimmedMessage));
+  }
+
   questionInput.value = "";
   questionInput.focus();
   closeMenu();

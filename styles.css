@@ -456,6 +456,106 @@ input:focus-visible {
   background: #f1f7ed;
 }
 
+.diagnostic-card {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  color: #49554a;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.field span {
+  color: #536257;
+}
+
+.field select {
+  width: 100%;
+  min-height: 36px;
+  padding: 8px 10px;
+  border: 1px solid #dfe8da;
+  border-radius: 10px;
+  background: #fbfcf9;
+  color: #34443a;
+  font: inherit;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.diagnostic-submit {
+  justify-self: start;
+  min-height: 34px;
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.diagnostic-result {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid #dfe9d7;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f7faf4, #edf5ea);
+}
+
+.status-pill {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #dfeecf;
+  color: #234b39;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.diagnostic-result p,
+.diagnostic-result ul {
+  margin: 0;
+  color: #415248;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.diagnostic-result ul {
+  padding-left: 18px;
+}
+
+.recommendation-block {
+  display: grid;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(108, 132, 103, 0.18);
+}
+
+.recommendation-block strong {
+  color: #264935;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .answer-link {
   display: inline-flex;
   align-items: center;
