@@ -30,7 +30,7 @@ const answerTopics = [
       "如果你常跑高速公路、長距離旅遊或入住外縣市，提前確認充電站位置能大幅降低換電車的心理負擔。",
     ],
     links: [{ label: "開啟 CCS1 充電站地圖", href: mapUrl }],
-    suggestions: ["沒有家用充電樁怎麼辦？", "想了解 bZ4X", "價格和維修費怎麼比較？"],
+    suggestions: ["沒有家用充電樁怎麼辦？", "為何選 bZ4X", "價格和維修費怎麼比較？"],
   },
   {
     matches: ["診斷", "推薦", "適合我", "幫我挑", "選車", "適合"],
@@ -38,7 +38,7 @@ const answerTopics = [
       "可以！先從日常使用情境開始評估。你可以告訴我居住縣市、每天大約行駛距離、停車時能否充電，以及預算範圍，我會根據這些條件整理選車時值得比較的重點。",
       "如果你以「通勤＋購物＋假日出遊」作為主要需求，可以先把日常路線與充電方式整理出來，這樣會比直接比較車價更有幫助。",
     ],
-    suggestions: ["我想了解電動車充電與續航", "價格和維修費怎麼比較？", "想了解 TOYOTA bZ4X"],
+    suggestions: ["我想了解電動車充電與續航", "價格和維修費怎麼比較？", "為何選 bZ4X"],
   },
   {
     matches: ["充電", "續航", "里程", "電池", "充電樁", "快速充電", "公用充電"],
@@ -48,7 +48,7 @@ const answerTopics = [
       "在選車過程中，建議把『可用充電的便利性』和『續航表現』一起考慮，因為這兩者往往比單純看數字更重要。",
     ],
     links: [{ label: "查看 CCS1 充電站地圖", href: mapUrl }],
-    suggestions: ["想了解 bZ4X", "價格和維修費怎麼比較？", "幫我整理選車條件"],
+    suggestions: ["為何選 bZ4X", "價格和維修費怎麼比較？", "幫我整理選車條件"],
   },
   {
     matches: ["預算", "售價", "價格", "補助", "費用", "成本", "維修", "省錢", "總成本", "比油車", "油車", "值得換", "換不換", "值得不值得", "電車值得"],
@@ -57,17 +57,17 @@ const answerTopics = [
       "電動車的維修頻率通常低於油車，因為沒有引擎、變速箱與排氣系統等高維護部件。若是長期持有，電動車的維修次數與維護成本往往有明顯優勢。",
       "如果你每天固定通勤、停車地點有充電條件，電動車在能源成本與維修成本上的優勢，往往能抵銷一部分車價差距。所以『買車當下價格高』不一定代表『長期不划算』。",
     ],
-    suggestions: ["我想開始選車診斷", "沒充電器怎麼辦？", "想了解 bZ4X"],
+    suggestions: ["我想開始選車診斷", "沒充電器怎麼辦？", "為何選 bZ4X"],
   },
   {
     matches: ["bz4x", "bZ4X", "toyota", "外觀", "內裝", "安全", "車款", "b z4x", "SUV", "續航表現"],
     paragraphs: [
-      "TOYOTA bZ4X 是純電 SUV，採用 e-TNGA 純電平台。了解車款時，可以從外觀與座艙、乘坐空間、安全配備、續航表現與充電方式等面向開始比較。",
-      "bZ4X 的優勢之一，是它適合作為油轉電的入門車款，因為外觀設計、車內體驗與充電使用方式都比較容易讓第一次接觸電動車的車主接受。",
-      "不同車型與配備差異很大，若你是首次考慮電動車，可以先把「通勤範圍、充電條件與預算」放在一起比，這樣會更容易做出正確判斷。",
+      "選擇 TOYOTA bZ4X，可以同時享有純電駕馭與 SUV 空間的便利。e-TNGA 純電平台帶來安靜、平順的行路感，少了引擎與傳統變速系統，也讓日常保養項目更精簡。",
+      "作為純電 SUV，bZ4X 的車室與行李空間適合日常通勤、家庭出行和週末旅行；純電動力的即時反應則讓市區起步與加速更輕鬆。搭配 TOYOTA 的品牌服務網絡，從看車、保養到用車諮詢，都能找到熟悉的服務管道。",
+      "不同年式、車型與配備的續航、安全功能及售價可能不同，建議依自己的預算、充電條件和常跑路線比較；實際規格以官方型錄與經銷據點說明為準。",
     ],
     links: [{ label: "查看 TOYOTA bZ4X 官方型錄", href: catalogUrl }],
-    suggestions: ["我想了解電動車充電與續航", "價格和維修費怎麼比較？", "查看 CCS1 充電站地圖"],
+    suggestions: ["我想了解電動車充電與續航", "價格和維修費怎麼比較？", "開始選車診斷"],
   },
   {
     matches: ["聯絡專人", "聯絡我", "找專人", "專人", "預約諮詢", "請專人聯絡我", "聯絡"],
@@ -77,7 +77,7 @@ const answerTopics = [
       "這樣比較適合你先聚焦在『適合我』，而不是只看單一車價數字。",
     ],
     links: [{ label: "前往 Toyota 官方 LINE", href: "https://page.line.me/399iqcls?oat_content=url&openQrModal=true" }],
-    suggestions: ["我想開始選車診斷", "家裡沒充電器怎麼辦", "想了解 TOYOTA bZ4X"],
+    suggestions: ["我想開始選車診斷", "家裡沒充電器怎麼辦", "為何選 bZ4X"],
   },
 ];
 
@@ -86,7 +86,7 @@ const fallbackAnswer = {
     "我目前是網站中的靜態資訊導覽，會依照你的問題整理關於電動車、充電、價格與 bZ4X 的重點資訊。你可以直接問我：家裡沒充電器怎麼辦、價格和維修費怎麼比較、電車是否值得換、充電站地圖或 bZ4X 介紹。",
     "如果你正在比較是否換電車，最實際的方式是先看自己的通勤距離、住家停車條件與長期總成本，而不是只看車價這一項。",
   ],
-  suggestions: ["沒有家用充電樁怎麼辦？", "價格和維修費怎麼比較？", "想了解 TOYOTA bZ4X"],
+  suggestions: ["沒有家用充電樁怎麼辦？", "價格和維修費怎麼比較？", "為何選 bZ4X"],
 };
 
 const chatFeed = document.querySelector("#chat-feed");
@@ -395,7 +395,7 @@ function handleDiagnosticSubmit(event) {
   followUpButtons.innerHTML = `
     <button class="suggestion" type="button" data-message="家裡沒充電器怎麼辦">家裡沒充電器怎麼辦</button>
     <button class="suggestion" type="button" data-message="價格和維修費怎麼比較？">價格和維修費怎麼比較？</button>
-    <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
+    <button class="suggestion" type="button" data-message="為何選 bZ4X">為何選 bZ4X</button>
     <a class="suggestion suggestion-link" href="https://page.line.me/399iqcls?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer">聯絡專人</a>
     <button class="suggestion redo-diagnostic-btn" type="button">重新診斷</button>
   `;
@@ -472,7 +472,7 @@ function resetConversation() {
           <button class="suggestion" type="button" data-message="價格和維修費怎麼比較？">價格和維修費怎麼比較？</button>
           <button class="suggestion" type="button" data-message="電車值得換嗎？">電車值得換嗎？</button>
           <button class="suggestion" type="button" data-message="我想了解電動車充電與續航">充電與續航</button>
-          <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
+          <button class="suggestion" type="button" data-message="為何選 bZ4X">為何選 bZ4X</button>
           <a class="suggestion suggestion-link" href="https://page.line.me/399iqcls?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer">聯絡專人</a>
           <button class="suggestion" type="button" data-message="我想查看 CCS1 充電站地圖">找附近充電站</button>
         </div>
