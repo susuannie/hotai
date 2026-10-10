@@ -379,25 +379,6 @@ input:focus-visible {
   line-height: 1.8;
 }
 
-.slogan-row {
-  display: flex;
-  margin-top: 12px;
-}
-
-.home-tagline {
-  display: inline-flex;
-  align-items: center;
-  padding: 7px 14px;
-  border: 1px solid rgba(83, 117, 86, 0.2);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.54);
-  color: #385b48;
-  font-size: clamp(17px, 2vw, 26px);
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: none;
-}
-
 .day-divider {
   display: flex;
   align-items: center;
