@@ -5,145 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="用聊天式導覽認識電動車、TOYOTA bZ4X、充電方式與選車考量。"
+      content="TOYOTA EV 新生活 AI 競賽資訊頁，包含題目敘述、期待目標與解題資源。"
     />
-    <meta name="theme-color" content="#f7f8f4" />
-    <title>TOYOTA電車小幫手</title>
+    <meta name="theme-color" content="#e7e7e5" />
+    <title>TOYOTA EV 新生活</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
-    <script src="./app.js" defer></script>
   </head>
   <body>
-    <div class="app-shell">
-      <button class="sidebar-backdrop" type="button" aria-label="關閉選單" tabindex="-1"></button>
-      <aside class="sidebar" id="sidebar" aria-label="聊天主選單">
-        <a class="brand" href="#" aria-label="TOYOTA電車小幫手首頁">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none">
-              <path d="M7 18.5h18l-1.7-6.2a2 2 0 0 0-1.9-1.4H10.6a2 2 0 0 0-1.9 1.4L7 18.5Zm0 0v3h3m15-3v3h-3M10 21.5h12M10 15h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="19.5" r="1.3" fill="currentColor"/><circle cx="22" cy="19.5" r="1.3" fill="currentColor"/>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="TOYOTA 品牌標誌">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="3.3" />
+              <path d="M14 18.5c2.8-7.1 17.2-7.1 20 0L31.5 29H16.5L14 18.5Z" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 24h12M21 18.5 24 14l3 4.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M24 29v6.5M18.5 35h11" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
             </svg>
-          </span>
-          <span class="brand-copy">
-            <strong>TOYOTA電車小幫手</strong>
-            <span>陪你找到適合的電車</span>
-          </span>
-        </a>
-
-        <button class="new-chat" id="new-chat" type="button">
-          <span aria-hidden="true">＋</span>
-          開始新對話
-        </button>
-
-        <nav class="side-section" aria-label="常見選購主題">
-          <p class="side-label">快速選單</p>
-          <button class="side-link" type="button" data-message="想了解 TOYOTA bZ4X">
-            <span class="side-icon" aria-hidden="true">◇</span>
-            認識 bZ4X
-          </button>
-          <button class="side-link" type="button" data-message="我想了解電動車充電與續航">
-            <span class="side-icon" aria-hidden="true">ϟ</span>
-            充電與續航
-          </button>
-          <button class="side-link" type="button" data-message="我想開始選車診斷">
-            <span class="side-icon" aria-hidden="true">☷</span>
-            開始選車診斷
-          </button>
-          <a
-            class="side-link"
-            href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="side-icon" aria-hidden="true">⌖</span>
-            CCS1 充電地圖
-            <span class="external-icon" aria-hidden="true">↗</span>
-          </a>
-        </nav>
-
-        <div class="sidebar-bottom">
-          <div class="tip-card">
-            <span class="tip-spark" aria-hidden="true">✳</span>
-            <p class="tip-title">從你的生活開始</p>
-            <p class="tip-copy">通勤距離、停車條件與充電習慣，都是選車的重要線索。</p>
           </div>
-          <p class="sidebar-note">電動車選購・實用資訊整理</p>
+          <span class="brand-name">TOYOTA</span>
         </div>
-      </aside>
+        <h1>智能轉型：AI助攻油轉電 TOYOTA EV 新生活</h1>
+      </header>
 
-      <main class="main-panel">
-        <header class="topbar">
-          <button
-            class="menu-toggle"
-            id="menu-toggle"
-            type="button"
-            aria-label="開啟主選單"
-            aria-controls="sidebar"
-            aria-expanded="false"
-          >
-            <span></span><span></span><span></span>
-          </button>
-          <div class="chat-title">
-            <span class="assistant-avatar small-avatar" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-            <span>
-              <strong>TOYOTA電車小幫手</strong>
-              <span class="status"><i aria-hidden="true"></i> 資訊導覽中</span>
-            </span>
+      <main class="content-wrap">
+        <section class="info-row">
+          <aside class="label-box">題目敘述</aside>
+          <div class="info-copy">
+            <p>
+              面對電動車轉型浪潮，燃油車主常因充電焦慮、使用習慣差異、車價成本與未知威脅而卻步。TOYOTA
+              bZ4X 以及其高續航表現、與競爭力的價格設定與易上手的使用體驗，提供油車車主轉換電動車的新選擇。
+            </p>
+            <p>
+              期待參賽者分析油車車主換購電動車的痛點，結合 bZ4X 作為油轉電入門選擇的優勢，設計一套專屬油車車主的個人化
+              「AI應用工具」，提供油轉電需求診斷、情境模擬與顧問式推薦服務，降低消費者換購 TOYOTA 電動車的決策門檻。
+            </p>
           </div>
-          <a
-            class="header-map-link"
-            href="https://www.google.com/maps/d/u/0/viewer?mid=19OGC8E8JMvUgHOEJkpkBUXnqiYgfwEcZ&amp;ll=23.71715317641448%2C120.886376184375&amp;z=6"
-            target="_blank"
-            rel="noopener noreferrer"
-          >充電地圖 <span aria-hidden="true">↗</span></a>
-        </header>
+        </section>
 
-        <section class="chat-panel" aria-label="電車選購對話">
-          <div class="chat-feed" id="chat-feed" role="log" aria-live="polite" aria-relevant="additions">
-            <div class="day-divider"><span>今天</span></div>
-            <article class="message assistant-message">
-              <span class="assistant-avatar message-avatar" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <div class="message-content">
-                <span class="speaker-name">TOYOTA電車小幫手</span>
-                <div class="bubble">
-                  <p>嗨！我可以陪你了解電動車與 TOYOTA bZ4X，也能一起整理適合你的選車條件。你現在最想先知道什麼？</p>
-                  <div class="suggestion-list" aria-label="建議問題">
-                    <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
-                    <button class="suggestion" type="button" data-message="我想了解電動車充電與續航">充電與續航</button>
-                    <button class="suggestion" type="button" data-message="我想開始選車診斷">幫我挑選適合的電車</button>
-                    <button class="suggestion" type="button" data-message="我想查看 CCS1 充電站地圖">找附近充電站</button>
-                  </div>
-                </div>
-                <time class="message-time">現在</time>
-              </div>
-            </article>
+        <section class="info-row">
+          <aside class="label-box">期待目標</aside>
+          <div class="info-copy">
+            <p class="intro-copy">期待參賽者的提案兼具創新性與商業落地價值，須達成以下四大目標：</p>
+            <ol class="goal-list">
+              <li>
+                <span class="list-title">精準的痛點與需求分析</span>
+                <p>
+                  分析油車車主換購電動車的深層痛點與使用者輪廓，以此作為發展 AI 解決方案的立論基礎。
+                </p>
+              </li>
+              <li>
+                <span class="list-title">打造專屬 AI 應用與無縫服務旅程</span>
+                <p>
+                  設計一套客製化「AI應用工具」（例如：成本試算、情境模擬、個人化推薦問題…等應用方向），結合車主生活習慣，提供專屬顧問服務。同時，請明確定義該工具的應用場景（例如：TOYOTA
+                  官網、LINE 官方帳號、或展間業務輔助工具…等），並規劃完整的顧客互動旅程（User Journey）。
+                </p>
+              </li>
+              <li>
+                <span class="list-title">展現 AI 技術的核心價值與應用必要性</span>
+                <p>
+                  請明確說明工具中 AI 所扮演的角色，以及相較於傳統報表、固定規則或一般查詢工具，AI 如何帶來更精準、個人化或具說服力的使用體驗。例如：是否透過機器學習分析車主用車資料，預測油轉電後的特有成本與充電需求？是否透過生成式 AI
+                  打造可互動、可解釋、具情緒理解能力的購車顧問？請凸顯 AI 在資料分析、需求配對、情境模擬或溝通轉換上的差異化價值。
+                </p>
+              </li>
+              <li>
+                <span class="list-title">商業落地評估與未來擴充性</span>
+                <p>
+                  隨著 TOYOTA 未來持續推出更多電動車款，該「油轉電顧問服務」需具備擴充性，並能實際運用於 TOYOTA
+                  官方網站等渠道。此外，必須提出實質的商業效益與具體的成效指標（KPIs），例如：預期能提升多少網站停留時間、增加多少預約試乘轉換率、或降低多少客服諮詢成本等。
+                </p>
+              </li>
+            </ol>
           </div>
+        </section>
 
-          <form class="composer-wrap" id="chat-form">
-            <label class="visually-hidden" for="question">輸入你的選車問題</label>
-            <div class="composer">
-              <input
-                id="question"
-                name="question"
-                type="text"
-                autocomplete="off"
-                placeholder="輸入問題，例如：沒有家用充電樁適合買電動車嗎？"
-                required
-              />
-              <button class="send-button" type="submit" aria-label="送出訊息">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M12 19V5m0 0L6.5 10.5M12 5l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </div>
-            <p class="disclaimer">此頁為靜態資訊導覽原型，回答由預設內容提供，尚未串接 AI。車款規格、售價與補助請以官方公告為準。</p>
-          </form>
+        <section class="info-row">
+          <aside class="label-box">解題資源</aside>
+          <div class="info-copy">
+            <ol class="resource-list">
+              <li>第三方市調分析報告與原始資料</li>
+              <li>產品型錄與配備資料</li>
+              <li>去個資化 CDP 會員資料，包含車輛持有期間、回廠保養費用、用車時數等</li>
+            </ol>
+            <p class="resource-note">
+              ※ 解題資源資料信件將於步驟一報名後，次一個工作日 17:00 前寄出，與報名通知信分開寄送，請務必留意收件匣（包含垃圾信件匣）。
+            </p>
+          </div>
         </section>
       </main>
     </div>
