@@ -72,10 +72,11 @@ const answerTopics = [
   {
     matches: ["聯絡專人", "聯絡我", "找專人", "專人", "預約諮詢", "請專人聯絡我", "聯絡"],
     paragraphs: [
-      "如果你想先聽專人把車款、充電方式與購車需求整理成更清楚的建議，我們可以安排一對一諮詢。",
-      "你可以把目前的預算、居住城市、是否有充電條件，以及最在意的使用場景先告訴專人，讓對話更有方向。",
+      "如果你想先聽專人把車款、充電方式與購車需求整理成更清楚的建議，可以直接前往 Toyota 官方 LINE 諮詢。",
+      "你可以把目前的預算、居住城市、是否有充電條件，以及最在意的使用場景先準備好，專人會依照你的情境提供更適合的建議。",
       "這樣比較適合你先聚焦在『適合我』，而不是只看單一車價數字。",
     ],
+    links: [{ label: "前往 Toyota 官方 LINE", href: "https://page.line.me/399iqcls?oat_content=url&openQrModal=true" }],
     suggestions: ["我想開始選車診斷", "家裡沒充電器怎麼辦", "想了解 TOYOTA bZ4X"],
   },
 ];
@@ -395,7 +396,7 @@ function handleDiagnosticSubmit(event) {
     <button class="suggestion" type="button" data-message="家裡沒充電器怎麼辦">家裡沒充電器怎麼辦</button>
     <button class="suggestion" type="button" data-message="價格和維修費怎麼比較？">價格和維修費怎麼比較？</button>
     <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
-    <button class="suggestion" type="button" data-message="聯絡專人">聯絡專人</button>
+    <a class="suggestion suggestion-link" href="https://page.line.me/399iqcls?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer">聯絡專人</a>
     <button class="suggestion redo-diagnostic-btn" type="button">重新診斷</button>
   `;
 
@@ -472,7 +473,7 @@ function resetConversation() {
           <button class="suggestion" type="button" data-message="電車值得換嗎？">電車值得換嗎？</button>
           <button class="suggestion" type="button" data-message="我想了解電動車充電與續航">充電與續航</button>
           <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
-          <button class="suggestion" type="button" data-message="聯絡專人">聯絡專人</button>
+          <a class="suggestion suggestion-link" href="https://page.line.me/399iqcls?oat_content=url&openQrModal=true" target="_blank" rel="noopener noreferrer">聯絡專人</a>
           <button class="suggestion" type="button" data-message="我想查看 CCS1 充電站地圖">找附近充電站</button>
         </div>
       </div>

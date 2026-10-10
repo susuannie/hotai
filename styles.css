@@ -487,7 +487,15 @@ input:focus-visible {
   transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
 }
 
-.suggestion:hover {
+.suggestion-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.suggestion:hover,
+.suggestion-link:hover {
   transform: translateY(-1px);
   border-color: #bdd3b5;
   background: #f1f7ed;
