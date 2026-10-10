@@ -542,6 +542,13 @@ input:focus-visible {
   padding-left: 18px;
 }
 
+.redo-diagnostic-btn {
+  background: #edf3ea;
+  border-color: #cfe0c8;
+  color: #2d5845;
+  font-weight: 700;
+}
+
 .recommendation-block {
   display: grid;
   gap: 6px;

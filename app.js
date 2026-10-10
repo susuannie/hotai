@@ -358,9 +358,14 @@ function renderDiagnosticResult(values) {
     </div>
   `;
 
-  const form = document.querySelector("#diagnostic-form");
-  if (form) {
-    form.replaceWith(result);
+  const existingResult = document.querySelector(".diagnostic-result");
+  if (existingResult) {
+    existingResult.replaceWith(result);
+  } else {
+    const form = document.querySelector("#diagnostic-form");
+    if (form) {
+      form.replaceWith(result);
+    }
   }
 
   return result;
@@ -381,7 +386,24 @@ function handleDiagnosticSubmit(event) {
     <button class="suggestion" type="button" data-message="家裡沒充電器怎麼辦">家裡沒充電器怎麼辦</button>
     <button class="suggestion" type="button" data-message="價格和維修費怎麼比較？">價格和維修費怎麼比較？</button>
     <button class="suggestion" type="button" data-message="想了解 TOYOTA bZ4X">認識 bZ4X</button>
+    <button class="suggestion redo-diagnostic-btn" type="button">重新診斷</button>
   `;
+
+  const redoButton = followUpButtons.querySelector(".redo-diagnostic-btn");
+  if (redoButton) {
+    redoButton.addEventListener("click", () => {
+      const diagnosticMessage = document.querySelector(".diagnostic-message");
+      if (diagnosticMessage) {
+        diagnosticMessage.remove();
+      }
+      showDiagnosticForm();
+    });
+  }
+
+  const existingSuggestions = destination?.querySelector(".suggestion-list");
+  if (existingSuggestions) {
+    existingSuggestions.remove();
+  }
 
   if (destination) {
     destination.append(followUpButtons);
