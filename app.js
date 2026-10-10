@@ -124,7 +124,7 @@ function addMessage(text, role, answer) {
   if (role === "assistant") {
     const speaker = document.createElement("span");
     speaker.className = "speaker-name";
-    speaker.textContent = "TOYOTA電車小幫手";
+    speaker.textContent = "TOYOTA純電生活小助手";
     content.append(speaker);
   }
 
@@ -453,7 +453,7 @@ function resetConversation() {
   greeting.innerHTML = `
     <span class="assistant-avatar message-avatar" aria-hidden="true">${assistantIcon}</span>
     <div class="message-content">
-      <span class="speaker-name">TOYOTA電車小幫手</span>
+      <span class="speaker-name">TOYOTA純電生活小助手</span>
       <div class="bubble">
         <p>嗨！我可以陪你了解電動車與 TOYOTA bZ4X，也能一起整理適合你的選車條件。你現在最想先知道什麼？</p>
         <div class="suggestion-list" aria-label="常見痛點問題">
