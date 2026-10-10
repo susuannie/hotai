@@ -1565,3 +1565,78 @@ select:focus-visible {
     padding: 20px 18px 17px;
   }
 }
+
+.chat-title strong {
+  font-size: 15px;
+}
+
+.speaker-name {
+  font-size: 13px;
+}
+
+.bubble {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.message-time {
+  font-size: 11px;
+}
+
+.suggestion {
+  min-height: 38px;
+  padding: 8px 13px;
+  font-size: 13px;
+}
+
+.field {
+  font-size: 13px;
+}
+
+.field select {
+  min-height: 42px;
+}
+
+.diagnostic-submit {
+  font-size: 14px;
+}
+
+.status-pill {
+  font-size: 13px;
+}
+
+.diagnostic-result p,
+.diagnostic-result ul,
+.answer-link {
+  font-size: 14px;
+}
+
+.recommendation-block strong {
+  font-size: 13px;
+}
+
+.composer input {
+  font-size: 15px;
+}
+
+.disclaimer {
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .chat-title strong {
+    font-size: 13px;
+  }
+
+  .bubble {
+    font-size: 14px;
+  }
+
+  .suggestion {
+    font-size: 12px;
+  }
+
+  .composer input {
+    font-size: 14px;
+  }
+}
