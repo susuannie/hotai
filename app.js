@@ -88,8 +88,15 @@ const sidebar = document.querySelector("#sidebar");
 const sidebarBackdrop = document.querySelector(".sidebar-backdrop");
 
 const assistantIcon = `
-  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M4 13.5 12 5l8 8.5M6.5 11v8h11v-8M10 19v-5h4v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+    <rect x="4" y="5" width="24" height="22" rx="8" fill="currentColor" opacity="0.08"/>
+    <path d="M9 17.5 16 11l7 6.5v7.7a1.8 1.8 0 0 1-1.8 1.8H10.8A1.8 1.8 0 0 1 9 25.2v-7.7Z" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12.5 17.5h7v-4.7h-7v4.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+    <path d="M12 22.5h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <circle cx="12.2" cy="25.6" r="1.4" fill="currentColor"/>
+    <circle cx="19.8" cy="25.6" r="1.4" fill="currentColor"/>
+    <path d="M13.3 13.5h5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    <path d="M14.6 9.8c.9-.8 2.9-.8 3.8 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
   </svg>`;
 
 function currentTime() {
