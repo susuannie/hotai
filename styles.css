@@ -1261,7 +1261,7 @@ select:focus-visible {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: url("./assets/bz4x-winter-background.png") center 44% / cover no-repeat;
+  background: url("./bz4x-winter-background.png") center 44% / cover no-repeat;
   content: "";
   opacity: 0.2;
   pointer-events: none;
